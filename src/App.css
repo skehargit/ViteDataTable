@@ -47,39 +47,6 @@
   position: relative;
 }
 
-.loading-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.7); /* Slightly transparent white background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000; /* Ensure it appears on top of the DataTable */
-}
-
-.loading-spinner {
-  border: 4px solid rgba(0, 0, 0, 0.1); /* Light grey border */
-  border-left-color: #007bff; /* Blue spinner */
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 1s linear infinite;
-}
-
-.loading-text {
-  margin-left: 10px;
-  font-size: 16px;
-  color: #007bff;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 .header {
   display: flex;
@@ -135,3 +102,5 @@
   border-radius: 4px;
   cursor: pointer;
 }
+
+

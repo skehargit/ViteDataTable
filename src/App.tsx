@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import { DataTable } from "primereact/datatable";
-import { Column } from "primereact/column";
+import { DataTable } from 'primereact/datatable';
+import { Column } from 'primereact/column';
 import { OverlayPanel } from "primereact/overlaypanel";
 import { Button } from "primereact/button";
 import 'primeicons/primeicons.css';
@@ -117,14 +117,7 @@ const App = () => {
   );
 
   return (
-    <div className="relative">
-      {loading && (
-        <div className="loading-overlay">
-          <div className="loading-spinner"></div>
-          <div className="loading-text">Loading...</div>
-        </div>
-      )}
-
+    <div className="card">
       <OverlayPanel ref={overlayPanelRef}>
         <div className="p-field">
           <input
@@ -144,7 +137,9 @@ const App = () => {
         onSelectionChange={handleRowSelection}
         selectionMode="multiple"
         paginator
-        rows={10}
+        loading={loading}
+        rows={12}
+        paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink"
         totalRecords={totalRecords}
         lazy
         onPage={handlePageChange}
@@ -157,6 +152,7 @@ const App = () => {
         <Column field="date_start" header="Date Start" />
         <Column field="date_end" header="Date End" />
       </DataTable>
+        
     </div>
   );
 };
