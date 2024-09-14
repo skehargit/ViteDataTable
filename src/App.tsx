@@ -117,7 +117,14 @@ const App = () => {
   );
 
   return (
-    <div className="card">
+    <div className="relative">
+      {loading && (
+        <div className="loading-overlay">
+          <div className="loading-spinner"></div>
+          <div className="loading-text">Loading...</div>
+        </div>
+      )}
+
       <OverlayPanel ref={overlayPanelRef}>
         <div className="p-field">
           <input
@@ -137,7 +144,6 @@ const App = () => {
         onSelectionChange={handleRowSelection}
         selectionMode="multiple"
         paginator
-        loading={loading}
         rows={12}
         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink"
         totalRecords={totalRecords}
